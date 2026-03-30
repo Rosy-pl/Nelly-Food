@@ -1,0 +1,214 @@
+/*------------------------------
+            RESET
+------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*------------------------------
+             BODY
+------------------------------*/
+body{
+    background: linear-gradient(to bottom, #0e5f6d, #0b3f49);
+    color: #F5F7F2;
+    font-family: 'Cabin', sans-serif;
+}
+
+/*------------------------------
+           TÍTULOS
+------------------------------*/
+h1, h2{
+    font-family: "Playfair Display", serif;
+    color: #FFFDF8;
+}
+
+p{
+    line-height: 1.6;
+}
+
+/*------------------------------
+            HEADER
+------------------------------*/
+.cabecalho-galeria{
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(to bottom, #159a9c, #0e5f6d);
+    border-bottom: 3px solid #f4c95d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cabecalho-galeria h1{
+    font-size: 3rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.cabecalho-galeria p{
+    font-size: 1.1rem;
+    color: #eefcf7;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/*------------------------------
+             MAIN
+------------------------------*/
+.galeria-page{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px 80px;
+}
+
+/*------------------------------
+            SECTION
+------------------------------*/
+.galeria{
+    text-align: center;
+}
+
+.galeria h2{
+    font-size: 2.2rem;
+    color: #ffe8a3;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.galeria h2::after{
+    content: "";
+    display: block;
+    width: 70%;
+    height: 3px;
+    background: #f4c95d;
+    margin: 8px auto 0;
+    border-radius: 10px;
+}
+
+/*------------------------------
+          GRID GALERIA
+------------------------------*/
+.galeria-grid{
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/*------------------------------
+         ITENS GALERIA
+------------------------------*/
+.galeria-item{
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid #7be0d1;
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-item:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.galeria-item img{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    border: 3px solid #f4c95d;
+}
+
+
+.imagem-galeria{
+    cursor: pointer;
+}
+
+.modal-imagem{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px;
+}
+
+.modal-imagem.ativo{
+    display: flex;
+}
+
+.imagem-ampliada{
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 12px;
+    border: 3px solid #f4c95d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.fechar-modal{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+/*------------------------------
+            FOOTER
+------------------------------*/
+.footer-galeria{
+    text-align: center;
+    padding: 25px 20px;
+    border-top: 2px solid #f4c95d;
+    background: #0a3138;
+}
+
+.footer-galeria p{
+    font-size: 0.95rem;
+    color: #dff7f2;
+}
+
+/*------------------------------
+         RESPONSIVIDADE
+------------------------------*/
+@media (max-width: 992px){
+    .galeria-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px){
+    .cabecalho-galeria{
+        padding: 45px 16px 30px;
+    }
+
+    .cabecalho-galeria h1{
+        font-size: 2.2rem;
+    }
+
+    .cabecalho-galeria p{
+        font-size: 1rem;
+    }
+
+    .galeria-page{
+        padding: 40px 16px 60px;
+    }
+
+    .galeria h2{
+        font-size: 1.8rem;
+    }
+
+    .galeria-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-item img{
+        height: 230px;
+    }
+}
